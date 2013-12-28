@@ -1,0 +1,13 @@
+
+1.0.2-pl
+==============
+- Removed custom xtype in system settings due to issues.
+- Set priority of plugin event to 10 for better work with MinifyX.
+
+1.0.1-pl
+==============
+- Fixed javascript config on frontend.
+
+1.0.0-pl
+==============
+- Initial release.
