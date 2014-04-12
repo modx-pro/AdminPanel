@@ -2,7 +2,7 @@ AdminPanel = {
 	timeout: null
 	,initialize: function () {
 
-		$(document).on('click', '.ap-close', function() {
+		$(document).on('click touchend', '.ap-close', function() {
 			var close = $(this);
 			var panel = $('.adminpanel');
 
@@ -27,6 +27,7 @@ AdminPanel = {
 					$.cookie('adminpanel_closed', 0);
 				});
 			}
+			return false;
 		});
 
 		$(document).on('mouseenter', '.ap-close, .adminpanel', function() {
