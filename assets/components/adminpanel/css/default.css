@@ -1,87 +1,88 @@
 @import 'lib/bootstrap.css';
-
 .adminpanel {
-	height: 50px;
-	font-family: sans-serif;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	font-size: 14px;
-	line-height: 20px;
+    /*position: relative;*/
+    bottom: 0;
+    padding-left: 20px;
+    height: 50px;
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    font-size: 14px;
+    line-height: 20px;
+    opacity: 0;
+    box-sizing: border-box;
 }
-.adminpanel a {text-decoration: none; border: none;}
-
-.adminpanel.ap-closed {display:none; right: 100%; left: -100%;}
+.adminpanel a { text-decoration: none; border: none; }
+.adminpanel.ap-closed { left: -100%; width: 100%; }
+.adminpanel.ap-closed * {
+    display: none;
+}
+.ap-nav { margin: 0; }
 .ap-close {
-	display: block;
-	position: fixed;
-	background: #eeeeee;
-	width: 20px;
-	height: 50px;
-	bottom: 0;
-	left:0;
-	line-height: 25px;
-	z-index: 1050;
-	text-align: center;
-	border-top-right-radius: 3px;
+    display: block;
+    position: fixed;
+    background: #eeeeee;
+    width: 20px;
+    height: 50px;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    text-align: center;
+    border-top-right-radius: 3px;
+    opacity: 0;
 }
-.ap-close.ap-dark {background: #222222;}
-.ap-link-first {border-right: 1px solid #dddddd;}
-.ap-dark .ap-link-first {border-right: 1px solid #333333;}
-
-.ap-close .ap-caret {position: fixed;bottom: 20px ;left: 4px;}
-.ap-caret.ap-opened {border-right: 4px solid #777777;border-top: 4px solid transparent;border-bottom: 4px solid transparent;}
-.ap-caret.ap-closed {border-left: 4px solid #777777;border-top: 4px solid transparent;border-bottom: 4px solid transparent;}
-.ap-caret.ap-dark.ap-opened {border-right: 4px solid #999999;}
-.ap-caret.ap-dark.ap-closed {border-left: 4px solid #999999;}
-
-.ap-close:hover {background: #AAA; cursor: pointer;}
-.ap-close.ap-dark:hover {background: #000000; cursor: pointer;}
-.ap-close:hover .ap-opened {border-right: 4px solid #333333;}
-.ap-close:hover .ap-closed {border-left: 4px solid #333333;}
-.ap-close.ap-dark:hover .ap-opened {border-right: 4px solid #ffffff;}
-.ap-close.ap-dark:hover .ap-closed {border-left: 4px solid #ffffff;}
-
-.ap-navbar-brand {margin-left: 0; line-height:1em;text-decoration: none;}
-
-.ap-msearch2 {position: relative;float: left;margin-top: 7px;margin-bottom: 0;}
+.ap-close.ap-closed { height: 50px !important; }
+.ap-nav .ap-caret {
+    border-top-color: #999;
+    border-bottom-color: #999;
+}
+.ap-close.ap-dark { background: #222222; }
+.ap-link-first { border-right: 1px solid #dddddd; }
+.ap-dark .ap-link-first { border-right: 1px solid #333333; }
+.ap-close .ap-caret { position: fixed; bottom: 20px; left: 4px; }
+.ap-caret.ap-opened { border-right: 4px solid #777777; border-top: 4px solid transparent; border-bottom: 4px solid transparent; }
+.ap-caret.ap-closed { border-left: 4px solid #777777; border-top: 4px solid transparent; border-bottom: 4px solid transparent; }
+.ap-caret.ap-dark.ap-opened { border-right: 4px solid #999999; }
+.ap-caret.ap-dark.ap-closed { border-left: 4px solid #999999; }
+.ap-close:hover { background: #AAA; cursor: pointer; }
+.ap-close.ap-dark:hover { background: #000000; cursor: pointer; }
+.ap-close:hover .ap-opened { border-right: 4px solid #333333; }
+.ap-close:hover .ap-closed { border-left: 4px solid #333333; }
+.ap-close.ap-dark:hover .ap-opened { border-right: 4px solid #ffffff; }
+.ap-close.ap-dark:hover .ap-closed { border-left: 4px solid #ffffff; }
+.ap-navbar-brand { margin-left: 0; line-height: 1em; text-decoration: none; }
+.ap-msearch2 { position: relative; float: left; margin: 0; height: 100%; }
 .ap-msearch2 .ap-msearch-query {
-	padding: 6px 12px;
-	margin-bottom: 0;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 13px;
-	font-weight: normal;
-	line-height: 1;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
+    padding: 6px 12px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    height: 30px;
+    margin-top: 10px;
+    font-weight: normal;
+    border-radius: 2px;
+    border-width: 0;
+    box-sizing: border-box;
 }
-
 .ap-dark .ap-msearch2 .ap-msearch-query {
-	color: #ffffff;
-	background-color: #515151;
-	border-color: #222222;
-	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.15);
-	-moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.15);
-	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.15);
-	-webkit-transition: none;
-	-moz-transition: none;
-	-o-transition: none;
-	transition: none;
+    color: #ffffff;
+    background-color: #515151;
+    border-color: #222222;
 }
-
-.ap-dark .ap-msearch2 .ap-msearch-query:-moz-placeholder {color: #cccccc;}
-.ap-dark .ap-msearch2 .ap-msearch-query:-ms-input-placeholder {color: #cccccc;}
-.ap-dark .ap-msearch2 .ap-msearch-query::-webkit-input-placeholder {color: #cccccc;}
-
+.ap-dark .ap-msearch2 .ap-msearch-query:-moz-placeholder { color: #cccccc; }
+.ap-dark .ap-msearch2 .ap-msearch-query:-ms-input-placeholder { color: #cccccc; }
+.ap-dark .ap-msearch2 .ap-msearch-query::-webkit-input-placeholder { color: #cccccc; }
 .ap-dark .ap-msearch2 .ap-msearch-query:focus,
 .ap-dark .ap-msearch2 .ap-msearch-query.focused {
-	padding: 7px 13px;
-	color: #333333;
-	text-shadow: 0 1px 0 #ffffff;
-	background-color: #ffffff;
-	border: 0;
-	outline: 0;
-	-webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
-	-moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
-	box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+    padding: 7px 13px;
+    color: #333333;
+    text-shadow: 0 1px 0 #ffffff;
+    background-color: #ffffff;
+    border: 0;
+}
+@media screen and (max-width: 768px) {
+    .adminpanel { height: auto; }
+    .ap-link-first { width: 100%; border-right: none !important; }
+    .ap-nav.ap-pull-right { display: none; }
+    .ap-msearch2 { float: none !important; clear: both; padding: 0 0 5px 15px; }
+    .ap-msearch-query { width: 100%; }
 }

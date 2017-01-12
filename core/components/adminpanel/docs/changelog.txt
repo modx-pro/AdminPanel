@@ -1,5 +1,13 @@
 Changelog for AdminPanel.
 
+1.1.0-pl
+==============
+- PSR-2.
+- Added support for miniShop2.4+.
+- Improved work on mobile devices.
+- Fixed bug with remembering of panel status.
+- Added scroll to top button.
+
 1.0.3-pl
 ==============
 - Improved iOS support.

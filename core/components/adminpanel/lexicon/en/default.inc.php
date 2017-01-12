@@ -14,3 +14,5 @@ $_lang['ap_mse2_search'] = 'Search...';
 
 $_lang['ap_tickets'] = 'Tickets';
 $_lang['ap_tickets_comments'] = 'Comments management';
+
+$_lang['ap_msearch2'] = 'mSearch2';

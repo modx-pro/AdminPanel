@@ -4,16 +4,15 @@
 define('PKG_NAME', 'AdminPanel');
 define('PKG_NAME_LOWER', strtolower(PKG_NAME));
 
-define('PKG_VERSION', '1.0.3');
+define('PKG_VERSION', '1.1.0');
 define('PKG_RELEASE', 'pl');
 define('PKG_AUTO_INSTALL', true);
 
 /* define paths */
 if (file_exists(dirname(dirname(dirname(__FILE__))) . '/core')) {
-	define('MODX_BASE_PATH', dirname(dirname(dirname(__FILE__))) . '/');
-}
-else {
-	define('MODX_BASE_PATH', dirname(dirname(dirname(dirname(__FILE__)))) . '/');
+    define('MODX_BASE_PATH', dirname(dirname(dirname(__FILE__))) . '/');
+} else {
+    define('MODX_BASE_PATH', dirname(dirname(dirname(dirname(__FILE__)))) . '/');
 }
 define('MODX_CORE_PATH', MODX_BASE_PATH . 'core/');
 define('MODX_MANAGER_PATH', MODX_BASE_PATH . 'manager/');
@@ -45,5 +44,6 @@ define('BUILD_CHUNK_STATIC', false);
 define('BUILD_PLUGIN_STATIC', false);
 
 $BUILD_RESOLVERS = array(
-	'settings'
+    'settings',
+    'chunks',
 );
