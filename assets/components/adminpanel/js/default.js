@@ -1,8 +1,8 @@
 AdminPanel = {
     timeout: null,
-    panel: $('.adminpanel'),
-    close: $('.ap-close'),
-    scroll: $('.ap-scroll-up'),
+    panel: jQuery('.adminpanel'),
+    close: jQuery('.ap-close'),
+    scroll: jQuery('.ap-scroll-up'),
 
     initialize: function () {
         this.close.on('click touchend', function (e) {
@@ -14,19 +14,19 @@ AdminPanel = {
             }
         });
 
-        $(document).on('mouseenter', '.ap-close, .adminpanel', function () {
+        jQuery(document).on('mouseenter', '.ap-close, .adminpanel', function () {
             clearTimeout(AdminPanel.timeout);
             AdminPanel.timeout = setTimeout(function () {
-                $('.adminpanel').animate({
+                jQuery('.adminpanel').animate({
                     opacity: AdminPanelConfig.active_opacity
                 }, 100);
             }, 1);
         });
 
-        $(document).on('mouseleave', '.ap-close, .adminpanel', function () {
+        jQuery(document).on('mouseleave', '.ap-close, .adminpanel', function () {
             clearTimeout(AdminPanel.timeout);
             AdminPanel.timeout = setTimeout(function () {
-                $('.adminpanel').animate({
+                jQuery('.adminpanel').animate({
                     opacity: AdminPanelConfig.inactive_opacity
                 }, 100);
             }, 1);
@@ -36,11 +36,11 @@ AdminPanel = {
         this.panel.css('opacity', AdminPanelConfig.inactive_opacity);
         this.close.css('opacity', AdminPanelConfig.inactive_opacity);
 
-        $(window).on('resize', this.adjustHeight);
+        jQuery(window).on('resize', this.adjustHeight);
 
         if (this.scroll.length) {
-            $(window).on('scroll', function () {
-                if ($(this).scrollTop() > 100) {
+            jQuery(window).on('scroll', function () {
+                if (jQuery(this).scrollTop() > 100) {
                     AdminPanel.scroll.fadeIn().css('display', 'block');
                 }
                 else {
@@ -49,9 +49,9 @@ AdminPanel = {
             });
             AdminPanel.scroll.on('click', function (e) {
                 e.preventDefault();
-                $('html, body').animate({scrollTop: 0}, $(window).height());
+                jQuery('html, body').animate({scrollTop: 0}, jQuery(window).height());
             });
-            $(document).trigger('scroll');
+            jQuery(document).trigger('scroll');
         }
     },
 
@@ -81,7 +81,7 @@ AdminPanel = {
     },
 
     adjustHeight: function () {
-        var height = $('.adminpanel').height();
+        var height = jQuery('.adminpanel').height();
         if (height) {
             AdminPanel.close.css('height', height)
                 .find('.ap-caret').css('bottom', height - (height / 2) - 5);
@@ -89,9 +89,9 @@ AdminPanel = {
     }
 };
 
-$(document).ready(function () {
-    $.getScript(AdminPanelConfig.jsUrl + 'lib/js.cookie-2.1.3.min.js');
-    $.getScript(AdminPanelConfig.jsUrl + 'lib/bootstrap.js', function () {
+jQuery(document).ready(function () {
+    jQuery.getScript(AdminPanelConfig.jsUrl + 'lib/js.cookie-2.1.3.min.js');
+    jQuery.getScript(AdminPanelConfig.jsUrl + 'lib/bootstrap.js', function () {
         AdminPanel.initialize();
     });
 });
